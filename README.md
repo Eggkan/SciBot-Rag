@@ -49,3 +49,16 @@ Follow these steps to set up the project locally.
 ```bash
 git clone https://github.com/eggkan/scibot-rag.git
 cd scibot-rag
+pip install -r req.py
+# (Note: For GPU acceleration, ensure torch is installed with CUDA support).
+
+## Build Database(IMPORTANT)
+# Step 1: Convert CSV to JSON training data
+python prepare_data_.py
+
+# Step 2: Create Embeddings and FAISS Index
+python create_vector_db.py
+
+#Run the app
+python chatbot_rag.py
+## The application will be accessible at http://127.0.0.1:7860 in your browser.
